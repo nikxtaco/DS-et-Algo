@@ -15,8 +15,8 @@ Complexity: O(N.loglogN) for N numbers.
 #include <bits/stdc++.h> 
 using namespace std;
 
-void prime_sieve(int n){
-
+void prime_sieve(int n)
+{
   bool p[n+1];
   memset(p,true,sizeof(p));
 
@@ -32,8 +32,8 @@ void prime_sieve(int n){
       cout<<i<<endl;
 }
 
-int main() {
-  
+int main() 
+{
   int n;
   cout<<"Enter N: ";
   cin>>n;
@@ -50,8 +50,8 @@ int main() {
 #include <bits/stdc++.h> 
 using namespace std;
 
-void prime_sieve(int n){
-
+void prime_sieve(int n)
+{
   bool p[n+1];
   memset(p,true,sizeof(p));
   int counter = 0, N;
@@ -74,8 +74,8 @@ void prime_sieve(int n){
     }
 }
 
-int main() {
-  
+int main() 
+{  
   int n = 10000; // enter max prime number value
   prime_sieve(n);
 
