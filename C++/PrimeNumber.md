@@ -30,13 +30,12 @@ void prime_sieve(int n){
   for(int i=2;i<=n;i++)
     if(p[i])
       cout<<i<<endl;
-
 }
 
 int main() {
   
   int n;
-  cout<<"Enter n: ";
+  cout<<"Enter N: ";
   cin>>n;
   prime_sieve(n);
 
@@ -73,7 +72,6 @@ void prime_sieve(int n){
       cout<<i<<endl;
       counter++;
     }
-
 }
 
 int main() {
