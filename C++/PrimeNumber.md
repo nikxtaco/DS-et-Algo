@@ -18,7 +18,7 @@ using namespace std;
 void prime_sieve(int n)
 {
   bool p[n+1];
-  memset(p,true,sizeof(p)); // set all locations to being true for being prime.
+  memset(p,true,sizeof(p)); // set all locations to true for being prime.
 
   for(int i=2;i*i<=n;i++)
   {
@@ -53,7 +53,7 @@ using namespace std;
 void prime_sieve(int n)
 {
   bool p[n+1];
-  memset(p,true,sizeof(p)); // set all locations to being true for being prime.
+  memset(p,true,sizeof(p)); // set all locations to true for being prime.
   int counter = 0, N;
 
   cout<<"Enter N: ";
