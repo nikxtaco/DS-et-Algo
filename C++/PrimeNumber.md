@@ -18,18 +18,18 @@ using namespace std;
 void prime_sieve(int n)
 {
   bool p[n+1];
-  memset(p,true,sizeof(p));
+  memset(p,true,sizeof(p)); // set all locations to being true for being prime.
 
   for(int i=2;i*i<=n;i++)
   {
     if(p[i]==true)
       for(int j=i*i;j<=n;j+=i)
         p[j]=false;
-  }
+  } // when a prime number is encountered, set its multiples to false.
   
   for(int i=2;i<=n;i++)
     if(p[i])
-      cout<<i<<endl;
+      cout<<i<<endl; // output all prime numbers till N.
 }
 
 int main() 
@@ -53,7 +53,7 @@ using namespace std;
 void prime_sieve(int n)
 {
   bool p[n+1];
-  memset(p,true,sizeof(p));
+  memset(p,true,sizeof(p)); // set all locations to being true for being prime.
   int counter = 0, N;
 
   cout<<"Enter N: ";
@@ -64,19 +64,19 @@ void prime_sieve(int n)
     if(p[i]==true)
       for(int j=i*i;j<=n;j+=i)
         p[j]=false;
-  }
+  } // when a prime number is encountered, set its multiples to false.
   
   for(int i=2;counter<N;i++)
     if(p[i])
     {
       cout<<i<<endl;
       counter++;
-    }
+    } // output N prime numbers.
 }
 
 int main() 
 {  
-  int n = 10000; // enter max prime number value
+  int n = 10000; // enter maximum prime number value.
   prime_sieve(n);
 
   return 0;
