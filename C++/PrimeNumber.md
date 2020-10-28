@@ -11,7 +11,7 @@ Complexity: O(N.loglogN) for N numbers.
 
 ## Q. Output all prime numbers till N.
 
-</pre>
+```
 #include <bits/stdc++.h> 
 using namespace std;
 
@@ -42,13 +42,12 @@ int main() {
 
   return 0;
 }
-</pre>
-
+```
 ## Q. Output the first N prime numbers. 
 
 (Further optimization possible.)
 
-<pre>
+```
 #include <bits/stdc++.h> 
 using namespace std;
 
@@ -84,4 +83,4 @@ int main() {
 
   return 0;
 }
-</pre>
+```
