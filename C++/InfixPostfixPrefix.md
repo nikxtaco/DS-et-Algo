@@ -65,3 +65,58 @@ int main()
     return 0;
 }
 ```
+
+## Q. Write a program in C to evaluate a given postfix expression.
+
+```
+#include <stdio.h>
+#include <ctype.h>
+
+int stack[100];
+int top = -1;
+
+void push(int x){
+    stack[++top]=x;
+}
+
+int pop(){
+    return stack[top--];
+}
+
+int main()
+{
+    char exp[100];
+    int x1, x2, x3, num;
+    printf("Enter postfix expression: ");
+    scanf("%s", exp);
+
+    for (char *xp = exp; *xp != '\0'; xp++)
+    {
+        if(isdigit(*xp))
+        {
+            num = *xp - 48;
+            push(num);
+        }
+        else
+        {
+            x1 = pop();
+            x2 = pop();
+            switch (*xp){
+              case '+': x3 = x1 + x2;
+                        break;
+              case '-': x3 = x2 - x1;
+                        break;
+              case '*': x3 = x1 * x2;
+                        break;
+              case '/': x3 = x2 / x1;
+                        break;
+            }
+            push(x3);
+        }
+    }
+
+    printf("Answer: %d\n", pop());
+
+    return 0;
+}
+```
