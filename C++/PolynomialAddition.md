@@ -1,6 +1,6 @@
 # Polynomial Addition
 
-## Polynomial Addition Using Array
+## Polynomial Addition Using Array (has flaws)
 
 ```
 #include <stdio.h>
