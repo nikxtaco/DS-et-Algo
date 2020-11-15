@@ -189,8 +189,8 @@ int main(){
 	}
 
 	z=t1+t2;
-  x=0;
-  y=t1;
+  	x=0;
+  	y=t1;
   
   while(x<t1 && y<t1+t2){
 	    if(pol[x].exp>pol[y].exp){
