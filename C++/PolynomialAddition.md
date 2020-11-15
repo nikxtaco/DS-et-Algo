@@ -159,3 +159,73 @@ int main()
     return 0;
 }
 ```
+Alt:
+```
+#include<stdio.h>
+
+struct Polynomial{
+	int coeff;
+	int exp;
+}pol[100];
+
+int main(){
+
+	int t1,t2,x,y,z,p;
+
+	printf("Enter number of terms in first polynomial: ");
+	scanf("%d",&t1);
+  printf("Enter coefficient and exponent of %d terms:\n", t1);
+	for(x=0;x<t1;x++){
+		scanf("%d",&pol[x].coeff);
+		scanf("%d",&pol[x].exp);
+	}
+
+	printf("Enter number of terms in second polynomial: ");
+	scanf("%d",&t2);
+  printf("Enter coefficient and exponent of %d terms:\n", t2);
+	for(x=t1;x<t1+t2;x++){
+		scanf("%d",&pol[x].coeff);
+		scanf("%d",&pol[x].exp);
+	}
+
+	z=t1+t2;
+  x=0;
+  y=t1;
+  
+  while(x<t1 && y<t1+t2){
+	    if(pol[x].exp>pol[y].exp){
+				pol[z].coeff=pol[x].coeff;
+				pol[z].exp=pol[x].exp;
+				z++; x++;
+			}
+			else if(pol[x].exp<pol[y].exp){
+				pol[z].coeff=pol[y].coeff;
+				pol[z].exp=pol[y].exp;
+				z++; y++;
+			}
+			else{
+				pol[z].coeff=pol[x].coeff+pol[y].coeff;
+				pol[z].exp=pol[y].exp;
+				z++; x++; y++;
+			}
+	}
+
+	while(x<t1){
+    pol[z].coeff=pol[x].coeff;
+		pol[z].exp=pol[x].exp;
+		z++; x++;
+	}
+	while(y<t1+t2){
+		pol[z].coeff=pol[y].coeff;
+		pol[z].exp=pol[y].exp;
+		z++; y++;
+	}
+
+  printf("\nThe resultant polynomial is:\n");
+	printf("%dx^%d",pol[t1+t2].coeff,pol[t1+t2].exp);
+	for(p=t1+t2+1;p<z;p++)
+		printf("+ %dx^%d",pol[p].coeff,pol[p].exp);
+	
+  return 0;
+}
+```
