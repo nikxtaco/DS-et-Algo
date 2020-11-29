@@ -31,7 +31,7 @@ int main()
             struct poly *temp = (struct poly*)malloc(sizeof(struct poly));
             scanf("%d", &(temp->coeff));
             scanf("%d", &(temp->expo));
-            temp->link = NULL;
+            temp->link = NULL; 
             p1head->link = temp;
             p1head = temp;
         }
