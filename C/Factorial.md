@@ -20,8 +20,8 @@ int main(void){
   return 0 ;
 }
 ```
-Q2) Write a program in C to print the factorial of n numbers with
-recursion.
+## Factorial Of N Numbers (Recursive)
+
 ```
 #include < stdio.h >
 long int fact( int n) {
