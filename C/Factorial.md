@@ -12,11 +12,11 @@ int main(void)
    printf("Enter an integer: ");
    scanf("%d", &n);
  
-   if (n < 0)
+   if(n<0)
        printf("Only positive numbers are acceptable.");
    else
    {
-       for (i = 1; i <= n; ++i)
+       for (i = 2; i <= n; ++i)
            fact *= i;
        
        printf("Factorial of %d = %llu", n, fact);
@@ -28,19 +28,23 @@ int main(void)
 ## Factorial Of N Numbers (Recursive)
 
 ```
-#include < stdio.h >
-long int fact( int n) {
-if (n>= 1 )
-return n*fact(n- 1 );
-else
-return 1 ;
+#include <stdio.h>
+ 
+long int fact(int n) 
+{
+   if (n>=1)
+       return n*fact(n-1);
+   else
+       return 1;
 }
-int main( void ) {
-int n;
-printf( "Enter a positive integer: " );
-scanf( "%d" ,&n);
-printf( "Factorial of %d = %ld" , n, fact(n));
-return 0 ;
+ 
+int main(void) 
+{
+   int n;
+   printf("Enter a positive integer: ");
+   scanf("%d",&n);
+   printf("Factorial of %d = %ld", n, fact(n));
+   return 0;
 }
 ```
 Q3) Write a program in C to print the Fibonacci series upto n numbers
