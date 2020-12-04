@@ -2,11 +2,12 @@
 
 ## Binary Search (Iterative)
 ```
-#include <stdio.h>
+#include<stdio.h>
  
 int binarySearch(int arr[], int l, int r, int x)
 {
-   while (l <= r) {
+   while (l <= r) 
+   {
        int m = l + (r - l) / 2;
  
        if (arr[m] == x)
@@ -25,11 +26,13 @@ int binarySearch(int arr[], int l, int r, int x)
    scanf("%d",&n);
    printf("Enter your array: ");
    int arr[n];
+   
    for(int i=0;i<n;i++)
-   scanf("%d", &arr[i]);
+      scanf("%d", &arr[i]);
    printf("Enter the number you want to search for: ");
    scanf("%d",&x);
    int result = binarySearch(arr, 0, n - 1, x) + 1;
+   
    (result == -1) ? printf("Element is not present"
                            " in array")
                   : printf("Element is present at "
@@ -40,11 +43,12 @@ int binarySearch(int arr[], int l, int r, int x)
 ```
 ## Binary Search (Recursive)
 ```
-#include <stdio.h>
+#include<stdio.h>
  
 int binarySearch(int arr[], int l, int r, int x)
 {
-   if (r >= l) {
+   if (r >= l) 
+   {
        int mid = l + (r - l) / 2;
         if (arr[mid] == x)
            return mid;
@@ -54,18 +58,21 @@ int binarySearch(int arr[], int l, int r, int x)
    }
    return -1;
 }
- int main(void)
+
+int main(void)
 {
    int n,x;
    printf("Enter the number of elements in your array: ");
    scanf("%d",&n);
    printf("Enter your array: ");
    int arr[n];
+   
    for(int i=0;i<n;i++)
-   scanf("%d", &arr[i]);
+      scanf("%d", &arr[i]);
    printf("Enter the number you want to search for: ");
    scanf("%d",&x);
    int result = binarySearch(arr, 0, n - 1, x) + 1;
+   
    (result == -1) ? printf("Element is not present in array")
                   : printf("Element is present at index %d",
                            result);
