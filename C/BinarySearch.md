@@ -1,6 +1,6 @@
-# Linear Search
+# Binary Search
 
-## Linear Search (Iterative)
+## Binary Search (Iterative)
 ```
 #include <stdio.h>
  
@@ -38,7 +38,7 @@ int binarySearch(int arr[], int l, int r, int x)
    return 0;
 }
 ```
-## Linear Search (Recursive)
+## Binary Search (Recursive)
 ```
 #include <stdio.h>
  
