@@ -1,6 +1,6 @@
 # Multithreading
 
-## Q. Create two threads: One for displaying all odd number between 1 and 100 and second thread for displaying all even numbers between 1 and 100.
+## Q. Create two threads: One for displaying all odd numbers between 1 and 100 and another for displaying all even numbers between 1 and 100.
 ```
 class OddThread implements Runnable{
  public void run(){
