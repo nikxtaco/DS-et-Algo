@@ -1,6 +1,6 @@
 # Frequency Of A Character
 
-#### Q. Find the frequency of a given character in a string.
+### Q. Find the frequency of a given character in a string.
 ```
 public class Main 
 {
