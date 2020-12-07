@@ -6,11 +6,11 @@ class Employee
 {
     public void display()
     {
-        System.out.println("Name of class is Employee. "); 
+        System.out.println("Name of class is Employee."); 
     }
     public void calcSalary()
     {
-        System.out.println("Salary of employee is 10000 "); 
+        System.out.println("Salary of employee is 10000."); 
     }
 }
  
@@ -20,7 +20,7 @@ class  Engineer extends Employee
     {
         super.display();
         super.calcSalary();
-        System.out.println("Salary of employee is 20000 "); 
+        System.out.println("Salary of employee is 20000."); 
     }
 }
  
