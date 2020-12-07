@@ -1,6 +1,6 @@
 # Palindrome
 
-#### Q. Check whether a given string is a palindrome or not. Eg: MALAYALAM is a palindrome.
+#### Q. Check whether a given string is a palindrome or not. Ex: MALAYALAM is a palindrome.
 ```
 public class Main 
 {
