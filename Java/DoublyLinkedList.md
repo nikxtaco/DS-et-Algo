@@ -6,8 +6,7 @@ import java.io.*;
 
 class Main
 {
-  List start;
-
+  List beg;
   class List
   {
     int value;
@@ -23,16 +22,16 @@ class Main
   {
     List newnode = new List(element);
     newnode.next = null;
-    List temp = start;
+    List temp = beg;
 
-    if(start == null)
+    if(beg==null)
     {
       newnode.prev = null;
-      start = newnode;
+      beg = newnode;
       return;
     }
 
-    while(temp.next != null)
+    while(temp.next!=null)
     {
       temp = temp.next;
     }
@@ -43,28 +42,27 @@ class Main
 
   int delete(int element)
   {
-    List temp = start;
+    List temp = beg;
 
-    if(temp.value == element)
+    if(temp.value==element)
     {
-      if(temp.next == null)
+      if(temp.next==null)
       { 
-        start = null;
-        return 1;
+        beg = null;
       }
       else
       {
-        start = start.next;
-        start.prev = null;
-        return 1;
+        beg = beg.next;
+        beg.prev = null;
       }
+      return 1;
     }
 
-    while(temp != null && temp.value != element)
+    while(temp!=null && temp.value!=element)
     {
       temp = temp.next;
     }
-    if(temp != null && temp.value == element)
+    if(temp!=null && temp.value==element)
     {
       temp.prev.next = temp.next;
       temp.next.prev = temp.prev;
@@ -77,9 +75,9 @@ class Main
 
   void display()
   {
-    List node = start;
-    System.out.print("The elements in the list are: ");
-    while(node != null)
+    List node = beg;
+    System.out.print("\nThe list is as follows: \n");
+    while(node!=null)
     {
       System.out.print(node.value + "  ");
       node = node.next;
@@ -89,39 +87,38 @@ class Main
 
   public static void main(String args[]) throws IOException
   {
-    Main d1 = new Main();
+    Main dll = new Main();
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-    System.out.print("Enter the first element of the list: ");
+    System.out.print("\nEnter an element into the list: ");
     int x,res;
     char ch;
     x = Integer.parseInt(br.readLine());
-    d1.insert(x);
-    System.out.println("Element inserted successfully");
+    dll.insert(x);
+    System.out.println("Done.");
 
     do 
     {
-      System.out.print("Would you like to add another node to the list(Y/N):  ");
+      System.out.print("Do you want to add another node to the list? Press Y if yes:  ");
       ch = br.readLine().charAt(0);
       if(ch == 'y' || ch == 'Y')
       {
-        System.out.print("Enter the next element of the list: ");
+        System.out.print("Enter the next element: ");
         x = Integer.parseInt(br.readLine());
-        d1.insert(x);
-        System.out.println("Element inserted successfully");  
+        dll.insert(x);
+        System.out.println("Done.");  
       }
-    }while(ch != 'n' && ch != 'N');
+    }while(ch == 'y' || ch == 'Y');
 
-    System.out.print("\nEnter the element to be deleted: ");
+    System.out.print("\nEnter the element to delete: ");
     x = Integer.parseInt(br.readLine());
-    res = d1.delete(x);
+    res = dll.delete(x);
 
-    if(res == 1)
-      System.out.println("The node was deleted successfully");
+    if(res==1)
+      System.out.println("Done.");
     else
-      System.out.println("There is no node with the value " + x + "; Deletion unsuccessful");
-
-    d1.display();
+      System.out.println("There is no node with the value " + x + ".");
+    dll.display();
   }
 }
 ```
