@@ -10,18 +10,18 @@ class Main
 
   class List
   {
-    int data;
+    int value;
     List next;
     List prev;
-    List(int d)
+    List(int data)
     {
-      data = d;
+      value = data;
     }
   }
 
-  void insert(int elem)
+  void insert(int element)
   {
-    List newnode = new List(elem);
+    List newnode = new List(element);
     newnode.next = null;
     List temp = start;
 
@@ -41,11 +41,11 @@ class Main
     newnode.prev = temp;
   }
 
-  int delete(int elem)
+  int delete(int element)
   {
     List temp = start;
 
-    if(temp.data == elem)
+    if(temp.value == element)
     {
       if(temp.next == null)
       { 
@@ -60,11 +60,11 @@ class Main
       }
     }
 
-    while(temp != null && temp.data != elem)
+    while(temp != null && temp.value != element)
     {
       temp = temp.next;
     }
-    if(temp != null && temp.data == elem)
+    if(temp != null && temp.value == element)
     {
       temp.prev.next = temp.next;
       temp.next.prev = temp.prev;
@@ -81,7 +81,7 @@ class Main
     System.out.print("The elements in the list are: ");
     while(node != null)
     {
-      System.out.print(node.data + "  ");
+      System.out.print(node.value + "  ");
       node = node.next;
     }
     System.out.println();
@@ -120,7 +120,7 @@ class Main
       System.out.println("The node was deleted successfully");
     else
       System.out.println("There is no node with the value " + x + "; Deletion unsuccessful");
-      
+
     d1.display();
   }
 }
