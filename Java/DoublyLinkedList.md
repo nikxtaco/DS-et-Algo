@@ -91,7 +91,7 @@ class Main
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     System.out.print("\nEnter an element into the list: ");
-    int x,res;
+    int x, ans;
     char ch;
     x = Integer.parseInt(br.readLine());
     dll.insert(x);
@@ -112,9 +112,9 @@ class Main
 
     System.out.print("\nEnter the element to delete: ");
     x = Integer.parseInt(br.readLine());
-    res = dll.delete(x);
+    ans = dll.delete(x);
 
-    if(res==1)
+    if(ans==1)
       System.out.println("Done.");
     else
       System.out.println("There is no node with the value " + x + ".");
