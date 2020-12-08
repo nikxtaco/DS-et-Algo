@@ -4,14 +4,15 @@
 ```
 public class Main
 {
-public static void main(String[] args){
-Main i = new Main();
-i = null;
-System.gc();
-}
- 
-public void finalize(){
-System.out.println("Garbage Collection is done.");
-}
+   public static void main(String[] args)
+   {
+      Main i = new Main();
+      i = null;
+      System.gc();
+   }
+   public void finalize()
+   {
+      System.out.println("Garbage Collection is done.");
+   }
 }
 ```
