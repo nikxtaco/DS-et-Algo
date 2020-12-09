@@ -1,6 +1,6 @@
-# Singly Linked List
+# Polynomial Addition
 
-### Q. Write a menu driven program in C to implement a singly linked list and to perform the following: Insert a node at the beginning of the list, insert a node after a particular node in the list, insert a node at the end of the list, delete a node containing a particular item.
+## Polynomial Addition Using Linked List
 ```
 #include <stdio.h>
 

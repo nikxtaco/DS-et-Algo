@@ -1,7 +1,6 @@
 # Polynomial Addition
 
 ## Polynomial Addition Using Array (has flaws, recheck code for accuracy)
-
 ```
 #include <stdio.h>
 #include <stdlib.h>
