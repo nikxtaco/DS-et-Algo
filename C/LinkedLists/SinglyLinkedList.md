@@ -1,12 +1,11 @@
 # Singly Linked List
 
-### Q. Write a menu driven program in C to implement a singly linked list and to perform the following: Insert a node at the beginning of the list, insert a node after a particular node in the list, insert a node at the end of the list, delete a node containing a particular item.
+### Q. Implement a singly linked list and to perform the following: Insert a node at the beginning of the list, insert a node after a particular node in the list, insert a node at the end of the list, delete a node containing a particular item.
 ```
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node
-{
+struct node{
     int data;
     struct node *link;
 } *head = NULL, *tail = NULL;
