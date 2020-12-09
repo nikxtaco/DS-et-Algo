@@ -1,4 +1,4 @@
-# Cicular Linked List
+# Circular Linked List
 
 ### Q. Implement a circular linked list.
 ```
