@@ -2,72 +2,149 @@
 
 ## Polynomial Addition Using Linked List
 ```
-#include <stdio.h>
+#include<stdio.h>
+#include<stdlib.h>
 
-#define max 5
-int a[max], front = -1, rear = -1;
+struct node
+{
+	int coeff;
+	int expo;
+	struct node *link;
+} *start=NULL,*startb=NULL,*startc=NULL;
 
-void enqueue(){
-    if ((front == 0 && rear == max-1) || (rear + 1 == front))
-        printf("Queue is full.\n");
-    else{
-        int val;
-        printf("Enter value to add to queue: ");
-        scanf("%d", &val);
-        if (front == -1)
-            front = rear = 0;
-        else if (rear == max-1)
-            rear = 0;
-        else
-            rear++;
-        a[rear] = val;
+void display(struct node *p)
+{  
+	struct node *loc=NULL;
+	loc=p;
+	
+	while(loc->link!=NULL)
+	{
+		printf("%dx^%d +",loc->coeff ,loc->expo);
+		loc=loc->link;
+	}
+	printf("%dx^%d ",loc->coeff ,loc->expo);
+}
+
+void insert(struct node **p,int m,int n)
+{
+	struct node *loc;
+	struct node *newnode=malloc(sizeof(struct node));
+	newnode->coeff=m;
+	newnode->expo=n;
+	newnode->link=NULL;
+    loc=*p;
+	
+	if((*p)==NULL)
+	{   
+		newnode->link=(*p);
+		(*p)=newnode;
+	}
+	else
+	{
+		while(loc->link!=NULL)
+		loc=loc->link;
+		loc->link=newnode;	
+	}
+}
+
+void sum(struct node *loc,struct node *temp)
+{   
+	struct node *newnode=malloc(sizeof(struct node));
+	int m;
+	while(loc->link!=NULL && temp->link!=NULL)
+	{  
+		if(loc->expo>temp->expo)
+		{
+			insert(&startc,loc->coeff,loc->expo);
+			loc=loc->link;
+		}
+		else if(loc->expo<temp->expo)
+		{
+			insert(&startc,temp->coeff,temp->expo);
+			temp=temp->link;
+		}
+		else 
+		{
+		    m=loc->coeff+temp->coeff;
+		    insert(&startc,m,temp->expo);
+			loc=loc->link;
+			temp=temp->link;
+		}
+	}
+	while(loc->link!=NULL && temp->link==NULL)
+    {
+    	if(loc->expo==temp->expo)
+    	{
+    		insert(&startc,temp->coeff+loc->coeff,temp->expo);
+    		loc=loc->link;
+		}
+		else
+		{
+				insert(&startc,loc->coeff,loc->expo);
+				loc=loc->link;
+		}
+	}
+	while(loc->link==NULL && temp->link!=NULL)
+	{
+		if(temp->expo==loc->expo)
+		{
+			insert(&startc,temp->coeff+loc->coeff,temp->expo);
+			temp=temp->link;
+		}
+		else
+		{
+			insert(&startc,temp->coeff,temp->expo);
+			temp=temp->link;
+		}
+	}
+	if(temp->expo==loc->expo)
+	insert(&startc,temp->coeff+loc->coeff,temp->expo);
+	else if(temp->expo>loc->expo)
+	{
+        insert(&startc,temp->coeff,temp->expo);
+		insert(&startc,loc->coeff,loc->expo);
+	}
+	else
+	{
+        insert(&startc,loc->coeff,loc->expo);
+        insert(&startc,temp->coeff,temp->expo);
     }
 }
 
-void dequeue(){
-    if (front == -1)
-    printf("Queue is empty.\n");
-    else{
-        printf("%d has been removed.\n", a[front]);
-        if (front == rear)
-            front = rear = -1;
-        else if (front == max-1)
-            front = 0;
-        else
-            front++;
-    }
-}
+int main()
+{
+	int a,b,t1,t2,i;
+	printf("Enter the number of terms of 1st polynomial: ");
+	scanf("%d",&a);
 
-void display(){
-  if (rear == -1)
-    printf("Queue is empty.\n");
-    else{
-        int i=front;
-        printf("The Queue is:\n");
-        if(rear<front){
-          for(;i<max;i++)
-          printf("%d ", a[i]);
-          i=0;
-        }
-        for(;i<=rear;i++)
-        printf("%d ", a[i]);
-        printf("\n");
-    }
-}
+	for(i=0;i<a;i++)
+	{
+		printf("Enter coefficient %d: ",i+1);
+		scanf("%d",&t1);
+		printf("Enter exponent %d: ",i+1);
+		scanf("%d",&t2);
+		insert(&start,t1,t2);
+	}
+	printf("\nThe 1st polynomial is: ");
+  display(start);
+  
+  printf("\n\nEnter the number of terms of 2nd polynomial: ");
+	scanf("%d",&b);
+	for(i=0;i<b;i++)
+	{
+		printf("Enter coefficient %d: ",i+1);
+		scanf("%d",&t1);
+		printf("Enter exponent %d: ",i+1);
+		scanf("%d",&t2);
+	  insert(&startb,t1,t2);
+	}
+	printf("\nThe 2nd polynomial is: ");
+	display(startb);
 
-int main(){
-    int ch = 0;
-    do{
-      printf("\n1) Add to queue\n2) Remove from queue\n3) Display queue\n4) Exit\nEnter your choice: ");
-      scanf("%d", &ch);
-      switch (ch)
-      {
-      case 1: enqueue(); break;
-      case 2: dequeue(); break;
-      case 3: display(); break;
-      }
-    }while (ch < 4);
+	sum(start,startb);
+	printf("\n\nThe sum of the two polynomials is: ");
+  display(startc);
 
-    return 0;
+  return 0;
 }
 ```
