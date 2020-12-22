@@ -1,6 +1,6 @@
 # Inheritance
 
-#### Q1. Write two Java classes Employee and Engineer. Engineer should inherit from Employee class. Employee class should have two methods - display() and calcSalary(). Write a program to display the engineer's salary and to display from Employee class using a single object instantiation. display() only prints the name of the class and does not return any value. Ex. “Name of class is Employee.” calcSalary() in Employee displays “Salary of employee is 10000.” and calcSalary() in Engineer displays “Salary of employee is 20000.".
+#### Q1. Write two Java classes Employee and Engineer. Engineer should inherit from Employee class. Employee class should have two methods - display() and calcSalary(). Write a program to display the engineer's salary and to display from Employee class using a single object instantiation. display() only prints the name of the class and does not return any value. Ex. “Name of class is Employee” calcSalary() in Employee displays “Salary of employee is 10000” and calcSalary() in Engineer displays “Salary of employee is 20000".
 ```
 class Employee
 {
