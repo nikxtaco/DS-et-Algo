@@ -46,14 +46,14 @@ class Main
         }
         fin.close();
     }
-    }
-    ```
-    ## Q2. Write a Java program that read from a file and write to file by handling all file related exceptions.
-    ```
-    import java.io.*;
+}
+```
+## Q2. Write a Java program that read from a file and write to file by handling all file related exceptions.
+```
+import java.io.*;
 
-    public class Main
-    {
+public class Main
+{
     public static void main(String args[]) throws IOException
     {
     int x;
