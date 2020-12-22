@@ -42,7 +42,6 @@ public class Employee
    public int age;
    public long salary;
    public String name, address, phoneNumber;
- 
    public void printSalary() 
    {
        System.out.println("Salary - " + salary);
