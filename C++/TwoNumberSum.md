@@ -76,3 +76,43 @@ vector<int> twoNumberSum(vector<int> array, int targetSum) {
   return answer;
 }
 ```
+
+
+#include <vector>
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> twoNumberSum(vector<int> array, int targetSum) {
+  
+	int n = *max_element(array.begin(), array.end());
+	unordered_map<int, int> store;
+	vector<int> ans;
+	
+	for(int i=0; i<n; i++)
+	{
+		store[n]=0;
+	}
+	
+	for(auto	x: array)
+	{
+		store[x]++;
+	}
+	
+	for(auto 	x: array)
+	{
+		if((x != targetSum - x) && store[targetSum - x] > 0)
+		{
+			ans.push_back(x);
+			ans.push_back(targetSum - x);
+			break;
+		}
+		else if((x ==targetSum - x) && store[targetSum - x] > 1)
+		{
+			ans.push_back(x);
+			ans.push_back(targetSum - x);
+			break;
+		}
+	}
+	
+  return ans;
+}
