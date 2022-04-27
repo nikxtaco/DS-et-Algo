@@ -1,0 +1,15 @@
+DATA SEGMENT
+
+
+
+DATA ENDS
+
+CODE SEGMENT
+
+  ASSUME CS:CODE,DS:DATA
+  START:
+          
+           
+           
+CODE ENDS    
+END START
