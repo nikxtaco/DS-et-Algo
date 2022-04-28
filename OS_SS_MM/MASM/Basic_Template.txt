@@ -13,3 +13,18 @@ CODE SEGMENT
            
 CODE ENDS    
 END START
+
+---
+
+Note:
+
+1. Check 'vars' to see values in variables.
+2. Use the following macro to print a string:
+    PRINT MACRO MSG
+        MOV AH, 09H
+        LEA DX, MSG
+        INT 21H
+    ENDM
+3. Exit all programs with:
+    MOV AH, 4CH
+    INT 21H
